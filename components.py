@@ -46,7 +46,6 @@ class ComponentBuilder(object):
 	
 	def __get_cached_component(self, component_name, model_metadata):
 		from pkrm_nlu import registry
-		from pkrm_nlu.model import Metadata
 		component_class = registry.get_component_class(component_name)
 		cache_key = component_class.cache_key(model_metadata)
 		if cache_key is not None and self.use_cache and cache_key in self.component_cache:
@@ -56,7 +55,6 @@ class ComponentBuilder(object):
 	
 	def load_component(self, component_name, model_dir, model_metadata, **context):
 		from pkrm_nlu import registry
-		from pkrm_nlu.model import Metadata
 		try:
 			cached_component, cache_key = self.__get_cached_component(component_name, model_metadata)
 			component = registry.load_component_by_name(component_name, model_dir,model_metadata, cached_component, **context)

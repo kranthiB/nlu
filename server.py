@@ -47,4 +47,3 @@ if __name__ == '__main__':
 	app = WSGIServer(('0.0.0.0', 5000), create_app(pkrm_nlu_config))
 	logger.info('Started http server on port 5000')
 	app.serve_forever()
-	model_20170719-200318
