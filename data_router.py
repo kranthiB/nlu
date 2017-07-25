@@ -10,7 +10,7 @@ class DataRouter(object):
 		if not os.path.isabs(model_dir):
 			model_dir = os.path.join(config['path'], model_dir)
 		#model_dir = '/Users/prokarma/kumar/workspace/machine-learning/uprr/nlu/model_20170719-200318'
-		model_dir = '/Users/prokarma/kumar/workspace/machine-learning/nlu/model_20170724-202625'
+		model_dir = '/Users/prokarma/kumar/workspace/machine-learning/nlu/model_20170725-185024'
 		return Metadata.load(model_dir)		
 
 	def __init__(self, config, component_builder):
