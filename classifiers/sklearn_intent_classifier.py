@@ -1,7 +1,7 @@
 import os
 import logging
 
-from pkrm_nlu.components import Component
+from nlu.components import Component
 
 logger = logging.getLogger(__name__)
 
@@ -39,12 +39,12 @@ class SklearnIntentClassifier(Component):
     def train(self, training_data, config, **kwargs):
     	from sklearn.model_selection import GridSearchCV
     	from sklearn.svm import SVC
-    	import numpy as np
     	labels = [e.get("intent") for e in training_data.intent_examples]
     	if len(set(labels)) < 2:
     		logger.warn("Can not train an intent classifier. Need at least 2 different classes. " +
     					"Skipping training of intent classifier.")
     	else:
+    		import numpy as np
     		y = self.transform_labels_str2num(labels)
     		X = np.stack([example.get("text_features") for example in training_data.intent_examples])
     		tuned_parameters = [{'C': [1, 2, 5, 10, 20, 100], 'kernel': [str('linear')]}]

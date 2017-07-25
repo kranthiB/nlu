@@ -1,4 +1,4 @@
-from pkrm_nlu.featurizers import Featurizer
+from nlu.featurizers import Featurizer
 
 import re
 import os

@@ -1,10 +1,10 @@
-from pkrm_nlu import utils
-from pkrm_nlu.training_data import TrainingData, Message
+from nlu import utils
+from nlu.training_data import TrainingData, Message
 
 import io
 import json
 
-PKRM_FILE_FORMAT = "pkrm_nlu"
+PKRM_FILE_FORMAT = "nlu"
 
 def resolve_data_files(resource_name):
 	try:
@@ -15,7 +15,7 @@ def resolve_data_files(resource_name):
 def guess_format(files):
 	return PKRM_FILE_FORMAT
 
-def pkrm_nlu_data_schema():
+def nlu_data_schema():
 	training_example_schema = {
 		"type": "object",
 		"properties": {
@@ -49,7 +49,7 @@ def pkrm_nlu_data_schema():
 	return {
 		"type": "object",
 		"properties": {
-			"pkrm_nlu_data": {
+			"nlu_data": {
 				"type": "object",
 				"properties": {
 					"regex_features": {
@@ -66,11 +66,11 @@ def pkrm_nlu_data_schema():
 		"additionalProperties": False
 	}
 	
-def validate_pkrm_nlu_data(data):
+def validate_nlu_data(data):
 	from jsonschema import validate
 	from jsonschema import ValidationError
 	try:
-		validate(data, pkrm_nlu_data_schema())
+		validate(data, nlu_data_schema())
 	except ValidationError as e:
 		 e.message += \
 		 	". Failed to validate training data, make sure your data is valid. "
@@ -79,11 +79,11 @@ def validate_pkrm_nlu_data(data):
 def load_pkrm_data(filename):
 	with io.open(filename, encoding="utf-8-sig") as f:
 		data = json.loads(f.read())
-	validate_pkrm_nlu_data(data)
+	validate_nlu_data(data)
 	
-	all_examples = data['pkrm_nlu_data'].get("common_examples", list())
-	regex_features = data['pkrm_nlu_data'].get("regex_features", list())
-	synonyms = data['pkrm_nlu_data'].get("entity_synonyms", list())
+	all_examples = data['nlu_data'].get("common_examples", list())
+	regex_features = data['nlu_data'].get("regex_features", list())
+	synonyms = data['nlu_data'].get("entity_synonyms", list())
 	
 	entity_synonyms = {}
 	for s in synonyms:

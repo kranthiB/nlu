@@ -1,10 +1,10 @@
-from pkrm_nlu.utils.spacy_utils import SpacyNLP
-from pkrm_nlu.tokenizers.spacy_tokenizer import SpacyTokenizer
-from pkrm_nlu.featurizers.spacy_featurizer import SpacyFeaturizer
-from pkrm_nlu.featurizers.regex_featurizer import RegexFeaturizer
-from pkrm_nlu.extractors.crf_entity_extractor import CRFEntityExtractor
-from pkrm_nlu.extractors.entity_synonyms import EntitySynonymMapper
-from pkrm_nlu.classifiers.sklearn_intent_classifier import SklearnIntentClassifier
+from nlu.utils.spacy_utils import SpacyNLP
+from nlu.tokenizers.spacy_tokenizer import SpacyTokenizer
+from nlu.featurizers.spacy_featurizer import SpacyFeaturizer
+from nlu.featurizers.regex_featurizer import RegexFeaturizer
+from nlu.extractors.crf_entity_extractor import CRFEntityExtractor
+from nlu.extractors.entity_synonyms import EntitySynonymMapper
+from nlu.classifiers.sklearn_intent_classifier import SklearnIntentClassifier
 
 registered_pipeline_templates = {
     "spacy_sklearn": [

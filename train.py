@@ -3,11 +3,11 @@ import logging
 import sys
 import os
 
-sys.path.insert(0,'/Users/prokarma/kumar/workspace/machine-learning/uprr')
+sys.path.insert(0,'/Users/prokarma/kumar/workspace/machine-learning')
 
-from pkrm_nlu.config import PkrmNLUConfig
-from pkrm_nlu.model import Trainer
-from pkrm_nlu.converters import load_data
+from nlu.config import PkrmNLUConfig
+from nlu.model import Trainer
+from nlu.converters import load_data
 
 logger = logging.getLogger(__name__)
 

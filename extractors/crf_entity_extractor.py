@@ -1,4 +1,4 @@
-from pkrm_nlu.extractors import EntityExtractor
+from nlu.extractors import EntityExtractor
 
 import logging
 import os

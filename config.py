@@ -55,7 +55,7 @@ class PkrmNLUConfig(object):
 			self.override(cmdline_config)
 			
 		if isinstance(self.__dict__['pipeline'], six.string_types):
-			from pkrm_nlu import registry
+			from nlu import registry
 			self.__dict__['pipeline'] = registry.registered_pipeline_templates[self.__dict__['pipeline']]
 	
 	def __getitem__(self, key):

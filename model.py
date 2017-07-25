@@ -5,9 +5,9 @@ import copy
 import logging
 import datetime
 
-from pkrm_nlu.training_data import Message
-from pkrm_nlu import components
-from pkrm_nlu.utils import create_dir
+from nlu.training_data import Message
+from nlu import components
+from nlu.utils import create_dir
 
 from builtins import object
 
@@ -56,7 +56,7 @@ class Metadata:
 		metadata = self.metadata.copy()
 		metadata.update({
 			"trained_at": datetime.datetime.now().strftime('%Y%m%d-%H%M%S'),
-			"pkrm_nlu_version": '1.0',
+			"nlu_version": '1.0',
 		})
 		with io.open(os.path.join(model_dir, 'metadata.json'), 'w') as f:
 			f.write(str(json.dumps(metadata, indent=4)))

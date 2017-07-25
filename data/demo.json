@@ -1,5 +1,5 @@
 {
-  "pkrm_nlu_data": {
+  "nlu_data": {
     "regex_features": [
       {
         "name": "zipcode",
@@ -268,6 +268,30 @@
             "end": 14,
             "value": "indian",
             "entity": "cuisine"
+          }
+        ]
+      },
+      {
+		"text": "How is the temperature in Hyderabad",
+		"intent": "weather",
+		"entities": [
+		  {
+			"start": 26,
+			"end": 35,
+			"value": "Hyderabad",
+			"entity": "city"
+          }
+        ]
+      },
+      {
+		"text": "how is the weather in Hyderabad",
+		"intent": "weather",
+		"entities": [
+		  {
+			"start": 22,
+			"end": 31,
+			"value": "Hyderabad",
+			"entity": "city"
           }
         ]
       },

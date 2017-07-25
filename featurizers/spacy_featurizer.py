@@ -1,4 +1,4 @@
-from pkrm_nlu.featurizers import Featurizer
+from nlu.featurizers import Featurizer
 
 class SpacyFeaturizer(Featurizer):
 	name = "intent_featurizer_spacy"

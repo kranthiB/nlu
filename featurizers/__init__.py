@@ -1,4 +1,4 @@
-from pkrm_nlu.components import Component
+from nlu.components import Component
 
 
 class Featurizer(Component):

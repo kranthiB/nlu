@@ -1,5 +1,5 @@
-from pkrm_nlu.tokenizers import Tokenizer, Token
-from pkrm_nlu.components import Component
+from nlu.tokenizers import Tokenizer, Token
+from nlu.components import Component
 
 class SpacyTokenizer(Tokenizer, Component):
 	name = "tokenizer_spacy"

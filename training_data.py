@@ -4,7 +4,7 @@ import os
 import io
 import json
 
-from pkrm_nlu.utils import lazyproperty, ordered, list_to_str
+from nlu.utils import lazyproperty, ordered, list_to_str
 from itertools import groupby
 
 logger = logging.getLogger(__name__)
@@ -82,7 +82,7 @@ class TrainingData(object):
 		
 	def as_json(self, **kwargs):
 		return str(json.dumps({
-			"pkrm_nlu_data": {
+			"nlu_data": {
 				"common_examples": [example.as_dict() for example in self.training_examples],
 				"regex_features": self.regex_features
 			}
